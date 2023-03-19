@@ -34,4 +34,4 @@ while True:
 
     else:
         print("invalid mode"  )
-        continue
+#gain modified         continue

@@ -1,0 +1,10 @@
+#Update the /etc/hosts file on your local machine to associate the placeholder# domain name with the IP address of your machine. Open the /etc/hosts
+
+
+vim /etc/hosts
+
+
+#type following 
+
+<ip address > <domain name>
+#i dont have the domain name registered .its only work for locally and testing purpose 

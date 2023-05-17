@@ -1,0 +1,38 @@
+#open the named.conf.local file
+
+sudo vim /etc/bind/named.conf.local
+
+
+zone "supermind.institution" {
+    type master;
+    file "/etc/bind/db.supermind";
+};
+
+
+#Create a new DNS zone file for the "supermind.institution" domain
+
+
+
+sudo vim /etc/bind/db.supermind
+
+
+$TTL 1h
+@    IN    SOA   ns1.supermind.institution. admin.supermind.institution. (
+                  1        ; Serial
+                  1h       ; Refresh
+                  15m      ; Retry
+                  1w       ; Expire
+                  1h       ; Minimum TTL
+                  )
+@    IN    NS    ns1.supermind.institution.
+@    IN    A     192.168.18.219
+www  IN    A     192.168.18.219
+
+
+#note that serial number should be changed each time you edit the zone file
+
+#restartt the server
+
+sudo systemctl restart bind9
+
+

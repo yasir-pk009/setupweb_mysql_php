@@ -1,0 +1,31 @@
+#change owenership and permission for document root
+#iam in /var/www/
+
+sudo chown -R www-data:www-data supermind.institution.conf/
+sudo chmod 755 supermind.institution.conf/
+
+
+#create some files inside the document root
+
+
+#create virtual host file in /etc/apache2/site-available/
+
+<VirtualHost *:80>
+    ServerName supermind.institution
+    ServerAlias www.supermind.institution
+    DocumentRoot /var/www/supermind.institution
+
+    <Directory /var/www/supermind.institution>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/supermind.institution_error.log
+    CustomLog ${APACHE_LOG_DIR}/supermind.institution_access.log combined
+</VirtualHost>
+
+
+enable using 
+
+a2ensite supermaind.institution.conf 

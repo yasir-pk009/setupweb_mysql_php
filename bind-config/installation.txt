@@ -1,0 +1,7 @@
+#Update the package repository.
+sudo apt update
+#Install BIND using the package manager.
+sudo apt install bind9
+
+
+#or could type sudo apt update && sudo apt install bind9

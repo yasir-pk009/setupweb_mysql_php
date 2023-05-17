@@ -1,0 +1,15 @@
+#update package repo and install apache2
+
+
+sudo apt upadate && sudo apt install apache2
+
+
+#check status 
+
+systemctl status apache2
+systemctl enable apache2 #for enable system boot 
+
+#allow firewall 
+ufw allow apache2
+
+

@@ -1,0 +1,31 @@
+
+
+
+
+#create a user and give full privilleges
+
+mysql> create user "yasir"@"localhost" identified by "super_secure_password";
+Query OK, 0 rows affected (0.47 sec)
+
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'yasir'@'localhost';
+Query OK, 0 rows affected (0.12 sec)
+
+
+#secure methods
+
+1 update all components
+
+2 llimit the access to phpmyadmin by ip address.use <directory and require ip directives 
+
+3 change url of php myadmin 
+
+   vim /etc/phpmyadmin/apache2.conf 
+   change the alias ilnto somthing else 
+   eg alias /phpmy21 /usr/shre/phpmyadmin 
+
+
+   restart the server 
+4 use figest authentication 
+5 use only https 
+6 strong passwords 
+ 
